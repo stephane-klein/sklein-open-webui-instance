@@ -43,6 +43,7 @@ $ ./scripts/check-openrouter-connection.sh
 $ ./scripts/create-minio-bucket.sh
 $ docker compose up -d --wait
 $ ./scripts/create-admin-user.sh
+$ ./scripts/create-stephane-klein-user.sh
 ```
 
 Open your browser on http://localhost:3000 (admin email: `contact+admin@stephane-klein.info`, password: see `OPEN_WEBUI_ADMIN_PASSWORD`)
