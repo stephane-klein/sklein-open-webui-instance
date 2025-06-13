@@ -99,7 +99,6 @@ services:
 
       OPENAI_API_BASE_URLS: https://openrouter.ai/api/v1;https://api.scaleway.ai/355b9bff-ac63-4696-9c10-5f6603f27a68/v1
       OPENAI_API_KEYS: ${OPENROUTER_API_SECRET_KEY};${SCALEWAY_GENERATIVE_API_SECRET_KEY}
-
     depends_on:
       postgres:
         condition: service_healthy
