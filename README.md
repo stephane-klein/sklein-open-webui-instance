@@ -32,7 +32,7 @@ If needed, you can force the environment variables loading with this command:
 $ source .envrc
 ```
 
-Avant de lancer l'installation, vous pouvez tester si les tockens d'accès au API fonctionnent correctement:
+Before starting installation, you can check if the API access tokens work properly:
 
 ```
 $ ./scripts/check-scaleway-connection.sh
