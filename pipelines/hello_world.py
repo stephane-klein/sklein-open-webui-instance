@@ -1,3 +1,4 @@
+import time
 from typing import List, Union, Generator, Iterator
 from pydantic import BaseModel, Field
 
@@ -59,8 +60,42 @@ class Pipeline:
         #     }
         # }
 
-        return f"""
+        yield {
+            "event": {
+                "type": "status",
+                "data": {
+                    "description": "I thinking",
+                    "done": False,
+                },
+            }
+        }
+
+        time.sleep(2)
+
+        yield {
+            "event": {
+                "type": "status",
+                "data": {
+                    "description": "Ok, I found it!",
+                    "done": False,
+                },
+            }
+        }
+
+        time.sleep(1)
+
+        yield f"""
             Hello world 2
 
             You said « {user_message} » !
         """
+
+        yield {
+            "event": {
+                "type": "status",
+                "data": {
+                    "description": "",
+                    "done": True,
+                },
+            }
+        }
