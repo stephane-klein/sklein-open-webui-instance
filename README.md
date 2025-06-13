@@ -7,6 +7,8 @@ Connected models:
 - https://openrouter.ai
 - [Scaleway Generative APIs](https://www.scaleway.com/fr/generative-apis/)
 
+The Open WebUI ["Pipelines"](https://github.com/open-webui/pipelines) service is installed and configured.
+
 More information, see french note: https://notes.sklein.xyz/Projet%2030/
 
 ## Preparation
@@ -47,6 +49,18 @@ $ ./scripts/create-stephane-klein-user.sh
 ```
 
 Open your browser on http://localhost:3000 (admin email: `contact+admin@stephane-klein.info`, password: see `OPEN_WEBUI_ADMIN_PASSWORD`)
+
+## Pipelines Examples and « hot reload »
+
+The *pipelines* contained in the [`./pipelines/`](./pipelines/) folder are automatically loaded when the container starts (`docker compose up -d` or `docker compose restart pipelines`).
+
+This folder contains a *pipeline* named [`hello_world.py`](./pipelines/hello_world.py).
+
+You can reload the pipelines "on the fly" with the following command:
+
+```sh
+$ ./scripts/reload-pipelines.sh
+```
 
 ## Helper scripts
 
