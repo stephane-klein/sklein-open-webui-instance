@@ -1,6 +1,8 @@
 [tools]
 awscli="2.22.35"
 jq="1.7.1"
+python = "3.13.5"
 
 [env]
 _.source = { value = "./.envrc", tools = true }
+_.python.venv = { path = ".venv", create = true }
