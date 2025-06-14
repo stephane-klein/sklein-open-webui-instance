@@ -26,6 +26,7 @@ Then fill in the `.secret` file with a [Scaleway](https://scaleway.com) API Key 
 
 ```sh
 $ mise install
+$ pip install -r requirements.txt
 ```
 
 If needed, you can force the environment variables loading with this command:
@@ -63,6 +64,14 @@ Export configuration:
 
 ```sh
 $ ./scripts/openwebui-config-export.sh > openwebui-config.json
+```
+
+## Import Open WebUI functions
+
+Le scripts suivant importe et active les functions Open WebUI présents dans le dossiers [`./functions/`](functions/):
+
+```sh
+$ ./scripts/openwebui-functions-sync.py
 ```
 
 ## Pipelines Examples and « hot reload »
