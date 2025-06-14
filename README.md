@@ -46,9 +46,24 @@ $ ./scripts/create-minio-bucket.sh
 $ docker compose up -d --wait
 $ ./scripts/create-admin-user.sh
 $ ./scripts/create-stephane-klein-user.sh
+$ cat openwebui-config.json | ./scripts/openwebui-config-import.sh
 ```
 
 Open your browser on http://localhost:3000 (admin email: `contact+admin@stephane-klein.info`, password: see `OPEN_WEBUI_ADMIN_PASSWORD`)
+
+## How to import / export json configuration file
+
+Import configuration:
+
+```sh
+$ cat openwebui-config.json | ./scripts/openwebui-config-import.sh
+```
+
+Export configuration:
+
+```sh
+$ ./scripts/openwebui-config-export.sh > openwebui-config.json
+```
 
 ## Pipelines Examples and « hot reload »
 

@@ -79,6 +79,8 @@ services:
     restart: unless-stopped
     ports:
       - "3000:8080"
+    volumes:
+      - ./functions/:/app/backend/functions/
     environment:
       ENABLE_PERSISTENT_CONFIG: false
       WEBUI_NAME: "openwebup.sklein.xyz"
