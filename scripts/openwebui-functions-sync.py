@@ -2,7 +2,6 @@
 import requests
 import os
 import glob
-from inspect import cleandoc
 
 session = requests.Session()
 session.headers.update({'Content-Type': 'application/json'})
