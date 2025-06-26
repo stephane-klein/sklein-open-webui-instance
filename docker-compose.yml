@@ -59,6 +59,7 @@ services:
 
   pipelines:
     image: ghcr.io/open-webui/pipelines:git-adec657
+    user: "${UID}:${GID}"
     restart: unless-stopped
     ports:
       - "9099:9099"
