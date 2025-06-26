@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 class Pipeline:
     class Valves(BaseModel):
-        pass
+        FOO: str = Field(default="bar")
 
     def __init__(self):
         self.name = "Hello World pipeline"
@@ -88,6 +88,8 @@ class Pipeline:
             Hello world 2
 
             You said « {user_message} » !
+
+            Valve foo value: {self.valves.FOO}
         """
 
         yield {
