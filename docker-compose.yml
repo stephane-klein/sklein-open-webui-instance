@@ -75,8 +75,9 @@ services:
       start_period: 10s
 
   openwebui:
+    image: ghcr.io/etalab-ia/albert-conversation/app:c09c843f318c06d7cc0f031baf37afa83c810542
     # Last stable version, see full list here: https://github.com/open-webui/open-webui/releases
-    image: ghcr.io/open-webui/open-webui:0.6.15
+    #image: ghcr.io/open-webui/open-webui:0.6.15
     restart: unless-stopped
     ports:
       - "3000:8080"
@@ -103,6 +104,10 @@ services:
       ENABLE_WEBSOCKET_SUPPORT: true
       WEBSOCKET_MANAGER: redis
       WEBSOCKET_REDIS_URL: "redis://redis:6379/1"
+
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ""
 
       # Documentation: https://docs.openwebui.com/getting-started/env-configuration/#cloud-storage
       STORAGE_PROVIDER: s3
