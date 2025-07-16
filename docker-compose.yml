@@ -58,8 +58,8 @@ services:
       retries: 5
 
   pipelines:
-    image: ghcr.io/open-webui/pipelines:git-adec657
     user: "${UID}:${GID}"
+    image: ghcr.io/open-webui/pipelines:git-26b8f20
     restart: unless-stopped
     ports:
       - "9099:9099"
@@ -76,7 +76,7 @@ services:
 
   openwebui:
     # Last stable version, see full list here: https://github.com/open-webui/open-webui/releases
-    image: ghcr.io/open-webui/open-webui:0.6.15
+    image: ghcr.io/open-webui/open-webui:0.6.16
     restart: unless-stopped
     ports:
       - "3000:8080"
@@ -97,12 +97,14 @@ services:
 
       DATABASE_URL: postgresql://postgres:password@postgres:5432/postgres
 
+      REDIS_URL: "redis://redis:6379/0"
+
       VECTOR_DB: pgvector
       PGVECTOR_DB_URL: postgresql://postgres:password@postgres:5432/postgres
 
       ENABLE_WEBSOCKET_SUPPORT: true
       WEBSOCKET_MANAGER: redis
-      WEBSOCKET_REDIS_URL: "redis://redis:6379/1"
+      WEBSOCKET_REDIS_URL: "redis://redis:6379/0"
 
       # Documentation: https://docs.openwebui.com/getting-started/env-configuration/#cloud-storage
       STORAGE_PROVIDER: s3
