@@ -83,6 +83,13 @@ $ ./scripts/upload-pipelines-function.py pipelines/hello_world.py
 {"status":true,"detail":"Pipeline uploaded successfully to ./pipelines/hello_world.py"}
 ```
 
+Then, you can also upload the valves with:
+
+```sh
+$ ./scripts/upload-pipelines-function-valves.py pipelines/hello_world_valves.json
+{"FOO":"secret"}
+```
+
 ## Helper scripts
 
 Helper script to directly enter into the PostgreSQL database:
