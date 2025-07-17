@@ -74,16 +74,13 @@ Le scripts suivant importe et active les functions Open WebUI présents dans le 
 $ ./scripts/openwebui-functions-sync.py
 ```
 
-## Pipelines Examples and « hot reload »
+## Import Open WebUI Pipelines function
 
-The *pipelines* contained in the [`./pipelines/`](./pipelines/) folder are automatically loaded when the container starts (`docker compose up -d` or `docker compose restart pipelines`).
-
-This folder contains a *pipeline* named [`hello_world.py`](./pipelines/hello_world.py).
-
-You can reload the pipelines "on the fly" with the following command:
+This script allows you to import a function of type [Pipelines](https://docs.openwebui.com/pipelines/):
 
 ```sh
-$ ./scripts/reload-pipelines.sh
+$ ./scripts/upload-pipelines-function.py pipelines/hello_world.py
+{"status":true,"detail":"Pipeline uploaded successfully to ./pipelines/hello_world.py"}
 ```
 
 ## Helper scripts
