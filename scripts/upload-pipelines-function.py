@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 import requests
 import os
-import glob
 
-pipeliens_folder_path = os.path.abspath(
+pipelines_folder_path = os.path.abspath(
     os.path.join(
         os.path.dirname(__file__),
         "..",
@@ -12,7 +11,6 @@ pipeliens_folder_path = os.path.abspath(
 )
 
 session = requests.Session()
-session.headers.update({"Content-Type": "application/json"})
 
 auth_response = session.post(
     "http://localhost:3000/api/v1/auths/signin",
@@ -23,15 +21,14 @@ auth_response = session.post(
 )
 session.headers.update({"Authorization": f'Bearer {auth_response.json()["token"]}'})
 
-with open(os.path.join(pipeliens_folder_path, "hello_world.py"), "r") as f:
+with open(os.path.join(pipelines_folder_path, "hello_world.py"), "r") as f:
     response = session.post(
         "http://localhost:3000/api/v1/pipelines/upload",
         files={
-            "file": ("hello_world.py", f, "text/x-python")
+            "file": ("hello_world3.py", f, "text/x-python")
         },
         data={
-            "urlIdx": "1"
+            "urlIdx": "2"
         }
     )
-    print("ici3")
     print(response.text)
