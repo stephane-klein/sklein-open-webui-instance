@@ -74,6 +74,15 @@ Le scripts suivant importe et active les functions Open WebUI présents dans le 
 $ ./scripts/openwebui-functions-sync.py
 ```
 
+## Import Open WebUI Pipelines function
+
+This script allows you to import a function of type [Pipelines](https://docs.openwebui.com/pipelines/):
+
+```sh
+$ ./scripts/upload-pipelines-function.py pipelines/hello_world.py
+{"status":true,"detail":"Pipeline uploaded successfully to ./pipelines/hello_world.py"}
+```
+
 ## Helper scripts
 
 Helper script to directly enter into the PostgreSQL database:
