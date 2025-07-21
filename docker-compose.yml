@@ -73,7 +73,7 @@ services:
 
   openwebui:
     # Last stable version, see full list here: https://github.com/open-webui/open-webui/releases
-    image: ghcr.io/open-webui/open-webui:0.6.16
+    image: ghcr.io/open-webui/open-webui:0.6.18
     restart: unless-stopped
     ports:
       - "3000:8080"
