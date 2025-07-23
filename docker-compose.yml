@@ -64,6 +64,8 @@ services:
       - "9099:9099"
     environment:
       PIPELINES_API_KEY: ${PIPELINES_API_KEY}
+    volumes:
+      - pipelines:/app/pipelines
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9099/v1"]
       interval: 30s
@@ -132,3 +134,5 @@ volumes:
      name: ${COMPOSE_PROJECT_NAME}_minio
   redis:
      name: ${COMPOSE_PROJECT_NAME}_redis
+  pipelines:
+     name: ${COMPOSE_PROJECT_NAME}_pipelines
